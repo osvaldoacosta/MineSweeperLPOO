@@ -1,3 +1,3 @@
 public enum Dificuldade {
-    FACIL, MEDIO,DIFICIL;
+    FACIL, MEDIO,DIFICIL
 }

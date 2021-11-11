@@ -1,18 +1,19 @@
 public class Jogo {
-    private Jogador jogador;
     private Integer tempoSeg;
+    private Integer qtdBandeiras;
+    private Jogador jogador;
     private Quadro quadro;
     private Dificuldade dificuldade;
-
     public Jogo(Jogador jogador, Quadro quadro, Dificuldade dificuldade) {
         this.jogador = jogador;
-        this.tempoSeg = 0;
         this.quadro = quadro;
         this.dificuldade = dificuldade;
+        this.tempoSeg = 0;
+        this.qtdBandeiras = 10;
     }
 
-    //Como vou adicionar hardcoded 1+ não precisa de verficação
-    public void addTempoSeg(Integer tempoSeg) {
+    //Como vou adicionar hardcoded não precisa de verficação
+    public void setTempoSeg(Integer tempoSeg) {
         this.tempoSeg = tempoSeg;
     }
 
@@ -65,7 +66,7 @@ public class Jogo {
 
     public void reiniciarJogo(){
         //Resetar valores e gera um novo quadro no final
-        quadro.gerarQuadro();
+        //quadro.gerarQuadro();
     }
 
     //não se se será necessário, ver se vale a pena manter dps
