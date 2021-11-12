@@ -1,3 +1,9 @@
+package estruturaTabuleiro;
+
+import estruturaTabuleiro.bloco.Bloco;
+import estruturaTabuleiro.bloco.BlocoVazio;
+import estruturaTabuleiro.bloco.EstadoBlocos;
+
 public class Quadro {
     private final int LARGURA_ESPACO;
     private final int ALTURA_ESPACO;
@@ -24,7 +30,6 @@ public class Quadro {
     }
 
     public Bloco[][] getTabuleiro() {
-
         return tabuleiro;
     }
 
@@ -32,12 +37,10 @@ public class Quadro {
         //Desenhar um quadro console (posteriormente em uma interface gráfica).
         //Gerar blocos com o estado de fechado baseados na altura e largura
 
-        //Esse for gera blocos vazios para fins de teste
+        //Esse for gera blocos vazios para fins de teste, MUDAR DEPOIS
         for (int i = 0; i < 10; i++){
             for(int j = 0; j < 10; j++){
                 tabuleiro[j][i] = new BlocoVazio(i,j);
-
-                //System.out.println("Bloco vazio gerado: x: "+i+"y: "+j+ "Classe:"+tabuleiro[j][i].getClass().getCanonicalName());
             }
         }
         //gerarMinas();
@@ -59,28 +62,28 @@ public class Quadro {
         int x = blocoCentro.getX();
         int y = blocoCentro.getY();
 
-        //Desse jeito tá rodando o bloco central também, talvez se fizer com 2 for fique melhor?
+        //Desse jeito tá rodando o estrutura.bloco central também, talvez se fizer com 2 for fique melhor?
         for(int i = x-1;i <= x+1;i++){
             for (int j = y-1; j<= y+1;j++){
                 if (tabuleiro[j][i].getClass().equals(BlocoVazio.class)){
                     tabuleiro[j][i].setEstadoBlocos(EstadoBlocos.EXPOSTO);
-                    //System.out.println("Esse bloco é: x: "+i+"y: "+j+ "Classe:"+tabuleiro[j][i].getClass().getCanonicalName());
+                    //System.out.println("Esse estrutura.bloco é: x: "+i+"y: "+j+ "Classe:"+tabuleiro[j][i].getClass().getCanonicalName());
 
                 }
             }
         }
     }
-
+    //Para teste
     public void debugBloco(){
         for (int i = 0; i < 10; i++){
             for(int j = 0; j < 10; j++){
                 Bloco bloco = tabuleiro[j][i];
-                System.out.println("Esse bloco é: : "+bloco.getClass().getCanonicalName()+"Coordenada: x"+i+"y:" +j+ "E o estado é:"+bloco.getEstadoBlocos());
+                System.out.println("Esse estrutura.bloco é: : "+bloco.getClass().getCanonicalName()+"Coordenada: x: "+i+", y: " +j+ ", estado do bloco é: "+bloco.getEstadoBlocos());
             }
         }
     }
 
-    //Bloco proximo a bombas
+    //base.Bloco proximo a bombas
     public int qtdBombasAoRedor(){
         int qtdBombas = 0;
         //Com as coordenadas ver quais são as bombas ao redor
@@ -91,16 +94,6 @@ public class Quadro {
     public void abrirCelula(){
 
     }
-    //teste
-    public static void main(String[] args) {
-        Bloco tabuleiro [][]  = new  Bloco[10][10];
 
-        Quadro quadro = new Quadro(10,10,tabuleiro,10);
 
-        quadro.gerarTabuleiro();
-
-        quadro.abrirAoRedor(tabuleiro[4][4]);
-
-        quadro.debugBloco();
-    }
 }

@@ -1,3 +1,5 @@
+package estruturaTabuleiro.bloco;
+
 public class Bloco {
 
     //Posicao refente a matriz(tabela) do quadro
@@ -44,6 +46,7 @@ public class Bloco {
             this.estadoBlocos = EstadoBlocos.EXPOSTO;
         }
     }
+
     //Principal a ser usado em outras classes
     public void marcarComBandeira(){
         if (!this.temBandeira){
