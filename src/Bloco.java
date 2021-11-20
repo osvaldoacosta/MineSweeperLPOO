@@ -1,56 +1,40 @@
 public class Bloco {
 
-    //Posicao refente a matriz(tabela) do quadro
+    //Acredito que falte mais coisa
+    //Posicao refente a matriz(tabela) do quadro[Não acho que manterei desse jeito
     private int x;
     private int y;
+    private Estado estado;
+    private TipoDeBloco tipoDeBloco;
 
-    private EstadoBlocos estadoBlocos;
-    private boolean temBandeira;
-
-    public Bloco(int x, int y) {
+    public Bloco(int x, int y, TipoDeBloco tipoDeBloco) {
         this.x = x;
         this.y = y;
-        this.estadoBlocos = EstadoBlocos.FECHADO;
-        this.temBandeira = false;
+        this.estado = Estado.FECHADO;
+        this.tipoDeBloco = tipoDeBloco;
     }
 
-    public EstadoBlocos getEstadoBlocos() {
-        return estadoBlocos;
+    public TipoDeBloco getTipoDeBloco() {
+        return tipoDeBloco;
     }
 
-    public void setEstadoBlocos(EstadoBlocos estadoBlocos) {
-        this.estadoBlocos = estadoBlocos;
+    public void setTipoDeBloco(TipoDeBloco tipoDeBloco) {
+        this.tipoDeBloco = tipoDeBloco;
     }
 
-    public boolean isTemBandeira() {
-        return temBandeira;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setTemBandeira(boolean temBandeira) {
-        this.temBandeira = temBandeira;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 
-    public int getX() {
-        return x;
-    }
 
-    public int getY() {
-        return y;
+    public void onPress(){
+        this.estado = Estado.EXPOSTO;
+        //Adicionar logica do que acontece depois de pressionar
     }
-
-    //Método só será usado nessa classe
-    private void marcarBloco(){
-        if (estadoBlocos.equals(EstadoBlocos.FECHADO)){
-            this.estadoBlocos = EstadoBlocos.EXPOSTO;
-        }
-    }
-    //Principal a ser usado em outras classes
-    public void marcarComBandeira(){
-        if (!this.temBandeira){
-            marcarBloco();
-        }
-    }
-
 
 
 
