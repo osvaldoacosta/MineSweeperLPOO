@@ -6,22 +6,22 @@ public class Bloco {
     private int x;
     private int y;
 
-    private EstadoBlocos estadoBlocos;
+    private EstadoBloco estadoBloco;
     private boolean temBandeira;
 
     public Bloco(int x, int y) {
         this.x = x;
         this.y = y;
-        this.estadoBlocos = EstadoBlocos.FECHADO;
+        this.estadoBloco = EstadoBloco.FECHADO;
         this.temBandeira = false;
     }
 
-    public EstadoBlocos getEstadoBlocos() {
-        return estadoBlocos;
+    public EstadoBloco getEstadoBloco() {
+        return estadoBloco;
     }
 
-    public void setEstadoBlocos(EstadoBlocos estadoBlocos) {
-        this.estadoBlocos = estadoBlocos;
+    public void setEstadoBloco(EstadoBloco estadoBloco) {
+        this.estadoBloco = estadoBloco;
     }
 
     public boolean isTemBandeira() {
@@ -42,8 +42,8 @@ public class Bloco {
 
     //Método só será usado nessa classe
     private void marcarBloco(){
-        if (estadoBlocos.equals(EstadoBlocos.FECHADO)){
-            this.estadoBlocos = EstadoBlocos.EXPOSTO;
+        if (estadoBloco.equals(EstadoBloco.FECHADO)){
+            this.estadoBloco = EstadoBloco.EXPOSTO;
         }
     }
 

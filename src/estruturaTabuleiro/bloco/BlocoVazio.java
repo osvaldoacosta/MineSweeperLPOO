@@ -6,8 +6,5 @@ public class BlocoVazio extends Bloco {
         super(x, y);
     }
 
-    public String foo(){
-        return "Foo";
-    }
 
 }
