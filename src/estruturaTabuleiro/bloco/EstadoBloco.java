@@ -1,5 +1,5 @@
 package estruturaTabuleiro.bloco;
 
-public enum EstadoBlocos {
+public enum EstadoBloco {
     EXPOSTO, FECHADO
 }
