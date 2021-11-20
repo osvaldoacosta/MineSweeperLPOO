@@ -1,5 +1,3 @@
-package estruturaJogo;
-
 public class Jogador {
     private Integer pontuacao;
     private String nome;

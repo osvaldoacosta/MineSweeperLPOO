@@ -1,7 +1,3 @@
-package estruturaJogo;
-
-import estruturaTabuleiro.Quadro;
-
 public class Jogo {
     private Integer tempoSeg;
     private Integer qtdBandeiras;
@@ -53,7 +49,7 @@ public class Jogo {
 
         if (dificuldade.equals(Dificuldade.FACIL)){
             //Adicionar um valor para quantidade de bombas
-            //quadro = new estrutura.Quadro(largura,altura,10(Exemplo));
+            //quadro = new Quadro(largura,altura,10(Exemplo));
             //quadro.gerarQuadro();
         }
         else if (dificuldade.equals(Dificuldade.MEDIO)){
@@ -81,7 +77,7 @@ public class Jogo {
 
     /*
     public static void main(String[] args) {
-        estruturaJogo.Jogador novoJogador = new estruturaJogo.Jogador(0,"");
+        Jogador novoJogador = new Jogador(0,"");
 
     }
     */
