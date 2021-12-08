@@ -1,28 +1,35 @@
 package estruturaJogo;
 
+import javax.management.InvalidAttributeValueException;
+
+import exceptions.ValorDeAtributoInvalido;
+
 public class Jogador {
     private Integer pontuacao;
     private String nome;
 
-    public Jogador(Integer pontuacao, String nome) {
-        this.pontuacao = pontuacao;
-        this.nome = nome;
+    public Jogador() {
+        this.pontuacao = 0;
+        this.nome = "";
     }
 
-    public void setNome(String nome) {
-        if(nome != null){
-            this.nome = nome;
-        }
+    public void setNome(String nome) throws ValorDeAtributoInvalido {
+		if(nome == null || nome == "")
+			throw new ValorDeAtributoInvalido("Erro pois valor para nome é inválido");
+		else
+			this.nome = nome;
     }
 
     public Integer getPontuacao() {
         return pontuacao;
     }
 
-    public void setPontuacao(Integer pontuacao) {
-        if (pontuacao >= 0) {
-            this.pontuacao = pontuacao;
-        }
+    public void setPontuacao(Integer pontuacao) throws ValorDeAtributoInvalido{
+        if (pontuacao < 0)
+        	throw new ValorDeAtributoInvalido("Erro pois foi passado um valor negativo para pontuação");
+        
+        else
+        	this.pontuacao = pontuacao;
     }
 
     public String getNome() {
