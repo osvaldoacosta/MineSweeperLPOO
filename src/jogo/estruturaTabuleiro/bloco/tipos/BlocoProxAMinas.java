@@ -1,4 +1,6 @@
-package estruturaTabuleiro.bloco;
+package jogo.estruturaTabuleiro.bloco.tipos;
+
+import jogo.estruturaTabuleiro.bloco.Bloco;
 
 public class BlocoProxAMinas extends Bloco {
     private int minasAoRedor;

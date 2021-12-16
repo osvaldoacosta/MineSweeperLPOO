@@ -1,16 +1,16 @@
-package estruturaTabuleiro;
+package jogo.estruturaTabuleiro.quadro.tipos;
 
 import java.util.Random;
 
-import estruturaJogo.Jogo;
-import estruturaTabuleiro.bloco.Bloco;
-import estruturaTabuleiro.bloco.BlocoMinado;
-import estruturaTabuleiro.bloco.BlocoProxAMinas;
-import estruturaTabuleiro.bloco.BlocoVazio;
+import jogo.estruturaJogo.Jogo;
+import jogo.estruturaTabuleiro.bloco.Bloco;
+import jogo.estruturaTabuleiro.bloco.tipos.BlocoMinado;
+import jogo.estruturaTabuleiro.bloco.tipos.BlocoProxAMinas;
+import jogo.estruturaTabuleiro.bloco.tipos.BlocoVazio;
 import exceptions.ValorDeAtributoInvalido;
 
 public class QuadroCampoMaluco extends Quadro{
-	//Vai de 1 a 3(usuario escolherá)
+	//Vai de 1 a 3(Vai ser escolhido randomicamente)
 	private int maluquiceDoJogo;
 	
 	public QuadroCampoMaluco(int largura, int altura, Bloco[][] tabuleiro, int qtd_minas,int maluquiceDoJogo) throws ValorDeAtributoInvalido {
